@@ -192,6 +192,12 @@
   .copy:hover { background: var(--accent-soft); }
 
   footer { padding-block: 44px 60px; color: var(--muted); font-size: .82rem; text-align: center; border-top: 1px solid var(--line); }
+
+  /* scroll reveal (progressive enhancement — content is visible without JS) */
+  html.js .reveal { opacity: 0; transform: translateY(22px); }
+  .reveal { transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); will-change: opacity, transform; }
+  html.js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { html.js .reveal { opacity: 1 !important; transform: none !important; } }
 </style>
 </head>
 <body>
@@ -236,98 +242,98 @@
 
 <main>
   <section id="about" class="wrap about">
-    <div class="sec-head"><span class="sec-no">01</span><h2>About</h2></div>
+    <div class="sec-head reveal"><span class="sec-no">01</span><h2>About</h2></div>
     <p>React Native Developer with 4+ years of professional experience designing, developing, integrating, and maintaining cross-platform mobile applications for Android and iOS. Proficient in React Native CLI, TypeScript, JavaScript, Redux Toolkit, Redux Persist, Zustand, React Navigation, RESTful APIs, Firebase, and third-party SDK integrations.</p>
     <p>Hands-on across HRMS &amp; payroll, food &amp; grocery delivery, social networking, e-commerce, flight booking, cinema booking, and location-based applications. Experienced in authentication &amp; OTP verification, token refresh, geolocation &amp; geofencing, push notifications, real-time communication, payment &amp; subscription integrations, and reusable UI components.</p>
     <p>Focused on clean code, maintainable architecture, app stability, and scalable mobile development — including hands-on Android/iOS build generation and publishing to the Google Play Store and Apple App Store Connect.</p>
   </section>
 
   <section id="skills" class="wrap">
-    <div class="sec-head"><span class="sec-no">02</span><h2>Technical Skills</h2></div>
+    <div class="sec-head reveal"><span class="sec-no">02</span><h2>Technical Skills</h2></div>
     <div class="skill-grid">
-      <div class="skill-card"><h3>Mobile &amp; Languages</h3><div class="tags">
+      <div class="skill-card reveal"><h3>Mobile &amp; Languages</h3><div class="tags">
         <span class="tag">React Native</span><span class="tag">React Native CLI</span><span class="tag">Expo</span>
         <span class="tag">React.js</span><span class="tag">TypeScript</span><span class="tag">JavaScript (ES6+)</span>
         <span class="tag">HTML5</span><span class="tag">CSS3</span></div></div>
-      <div class="skill-card"><h3>State &amp; Navigation</h3><div class="tags">
+      <div class="skill-card reveal"><h3>State &amp; Navigation</h3><div class="tags">
         <span class="tag">Redux Toolkit</span><span class="tag">Redux Persist</span><span class="tag">Zustand</span>
         <span class="tag">Context API</span><span class="tag">React Hooks</span><span class="tag">React Navigation</span></div></div>
-      <div class="skill-card"><h3>APIs &amp; Auth</h3><div class="tags">
+      <div class="skill-card reveal"><h3>APIs &amp; Auth</h3><div class="tags">
         <span class="tag">RESTful APIs</span><span class="tag">Axios</span><span class="tag">Interceptors</span>
         <span class="tag">JWT Auth</span><span class="tag">OTP Auth</span><span class="tag">Token Refresh</span></div></div>
-      <div class="skill-card"><h3>Firebase &amp; Real-time</h3><div class="tags">
+      <div class="skill-card reveal"><h3>Firebase &amp; Real-time</h3><div class="tags">
         <span class="tag">FCM</span><span class="tag">Firestore</span><span class="tag">Crashlytics</span>
         <span class="tag">Socket.IO</span><span class="tag">Agora SDK</span><span class="tag">CometChat SDK</span></div></div>
-      <div class="skill-card"><h3>Payments &amp; Subscriptions</h3><div class="tags">
+      <div class="skill-card reveal"><h3>Payments &amp; Subscriptions</h3><div class="tags">
         <span class="tag">RevenueCat SDK</span><span class="tag">In-App Purchases</span><span class="tag">Subscriptions</span>
         <span class="tag">Razorpay SDK</span><span class="tag">Payment Workflows</span></div></div>
-      <div class="skill-card"><h3>Location &amp; Maps</h3><div class="tags">
+      <div class="skill-card reveal"><h3>Location &amp; Maps</h3><div class="tags">
         <span class="tag">React Native Maps</span><span class="tag">Geolocation</span><span class="tag">Geofencing</span>
         <span class="tag">Google Maps</span></div></div>
-      <div class="skill-card"><h3>Tools &amp; Testing</h3><div class="tags">
+      <div class="skill-card reveal"><h3>Tools &amp; Testing</h3><div class="tags">
         <span class="tag">Git &amp; GitHub</span><span class="tag">Android Studio</span><span class="tag">Xcode</span>
         <span class="tag">VS Code</span><span class="tag">Jest</span><span class="tag">Postman</span>
         <span class="tag">Flipper</span><span class="tag">SonarQube</span><span class="tag">CI/CD · Agile</span></div></div>
-      <div class="skill-card"><h3>Release &amp; Publishing</h3><div class="tags">
+      <div class="skill-card reveal"><h3>Release &amp; Publishing</h3><div class="tags">
         <span class="tag">Play Store</span><span class="tag">App Store Connect</span><span class="tag">Android Builds</span>
         <span class="tag">iOS Builds</span><span class="tag">Release Config</span></div></div>
     </div>
   </section>
 
   <section id="work" class="wrap">
-    <div class="sec-head"><span class="sec-no">03</span><h2>Featured Projects</h2></div>
+    <div class="sec-head reveal"><span class="sec-no">03</span><h2>Featured Projects</h2></div>
     <div class="proj-grid">
-      <article class="proj">
+      <article class="proj reveal">
         <div class="proj-top"><h3>HRMS &amp; Payroll</h3><span class="status live"><span class="sd"></span>Live</span></div>
         <p>Employee-facing HRMS app: attendance check-in/out with GPS geofencing and selfie face-detection, leave management, salary slips with PDF download, and salary advances.</p>
         <div class="stack"><span>React Native CLI</span><span>TypeScript</span><span>Redux</span><span>Geofencing</span><span>ML Kit</span></div>
       </article>
-      <article class="proj">
+      <article class="proj reveal">
         <div class="proj-top"><h3>SGNT</h3><span class="status live"><span class="sd"></span>Live</span></div>
         <p>Social networking platform for pet owners — posts, likes, comments, follows, content boost &amp; analytics, Agora real-time video calling, Crashlytics, and pet-vendor/vaccine management.</p>
         <div class="stack"><span>React Native</span><span>Firebase</span><span>Agora SDK</span><span>REST APIs</span></div>
       </article>
-      <article class="proj">
+      <article class="proj reveal">
         <div class="proj-top"><h3>Slips</h3><span class="status live"><span class="sd"></span>Live</span></div>
         <p>Anonymous messaging app — contact sync, Q&amp;A slips sent without revealing the sender, stickers &amp; packs, and paid reveal plans via RevenueCat in-app subscriptions.</p>
         <div class="stack"><span>React Native</span><span>Redux</span><span>RevenueCat</span><span>IAP</span></div>
       </article>
-      <article class="proj">
+      <article class="proj reveal">
         <div class="proj-top"><h3>Evolution Jet</h3><span class="status live"><span class="sd"></span>Live</span></div>
         <p>Flight booking app — flight search, comparison and booking workflows with FCM push notifications for booking updates, flight alerts and promotions.</p>
         <div class="stack"><span>React Native</span><span>REST APIs</span><span>Firebase · FCM</span></div>
       </article>
-      <article class="proj">
+      <article class="proj reveal">
         <div class="proj-top"><h3>Connplex</h3><span class="status live"><span class="sd"></span>Live</span></div>
         <p>Cinema booking app — movie browsing, seat selection, booking history, authentication, reusable components, and push notifications for booking communication.</p>
         <div class="stack"><span>React Native</span><span>TypeScript</span><span>Push Notifications</span></div>
       </article>
-      <article class="proj">
+      <article class="proj reveal">
         <div class="proj-top"><h3>SEM Ecosystem</h3><span class="status live"><span class="sd"></span>Live</span></div>
         <p>Business directory app — business listing &amp; discovery with REST APIs, geolocation and map-based nearby search, with Redux + Zustand state and optimized rendering.</p>
         <div class="stack"><span>React Native</span><span>Redux</span><span>Zustand</span><span>Geolocation</span></div>
       </article>
-      <article class="proj">
+      <article class="proj reveal">
         <div class="proj-top"><h3>F&amp;G Delivery Ecosystem</h3><span class="status dev"><span class="sd"></span>In Development</span></div>
         <p>On-demand food &amp; grocery platform — three separate apps for Customer, Vendor &amp; Delivery Partner, with parcel booking, KYC, earnings &amp; settlements and real-time tracking.</p>
         <div class="stack"><span>RN 0.86</span><span>Redux Toolkit</span><span>Socket.IO</span><span>Maps</span><span>Razorpay</span></div>
       </article>
-      <article class="proj">
+      <article class="proj reveal">
         <div class="proj-top"><h3>Cryconnect</h3><span class="status done"><span class="sd"></span>Delivered</span></div>
         <p>Instagram-style social app — image posts, reels, contests, follows, CometChat real-time messaging, media uploads, and crypto-payment workflows with Redux state.</p>
         <div class="stack"><span>React Native</span><span>Redux</span><span>CometChat SDK</span></div>
       </article>
-      <article class="proj">
+      <article class="proj reveal">
         <div class="proj-top"><h3>MyDiaNet</h3><span class="status done"><span class="sd"></span>Delivered</span></div>
         <p>Gold &amp; jewellery mobile app — product catalog, browsing and ordering workflows with REST API integration and Redux state management.</p>
         <div class="stack"><span>React Native</span><span>Redux</span><span>REST APIs</span></div>
       </article>
-      <article class="proj">
+      <article class="proj reveal">
         <div class="proj-top"><h3>GasSwale</h3><span class="status done"><span class="sd"></span>Delivered</span></div>
         <p>E-commerce app for gas cylinder ordering — product listing, search, filtering and ordering with Axios REST integration and Redux-based state management.</p>
         <div class="stack"><span>React Native</span><span>Redux</span><span>Axios</span></div>
       </article>
-      <article class="proj">
+      <article class="proj reveal">
         <div class="proj-top"><h3>Protect Security</h3><span class="status done"><span class="sd"></span>Delivered</span></div>
         <p>Job &amp; shift-management app for security personnel — job search &amp; apply, shift check-in/out &amp; work-hour tracking, dashboards, schedules and work history.</p>
         <div class="stack"><span>React Native</span><span>Redux</span><span>REST APIs</span></div>
@@ -336,9 +342,9 @@
   </section>
 
   <section id="experience" class="wrap">
-    <div class="sec-head"><span class="sec-no">04</span><h2>Experience</h2></div>
+    <div class="sec-head reveal"><span class="sec-no">04</span><h2>Experience</h2></div>
     <div class="xp">
-      <div class="xp-item">
+      <div class="xp-item reveal">
         <div class="when">MAY 2023 — PRESENT</div>
         <h3>React Native Developer</h3>
         <div class="co">Virtual Height IT Services Pvt. Ltd. · Indore, India</div>
@@ -351,7 +357,7 @@
           <li>Handle performance optimization, debugging, Android/iOS compatibility, builds and store releases.</li>
         </ul>
       </div>
-      <div class="xp-item">
+      <div class="xp-item reveal">
         <div class="when">SEP 2022 — APR 2023</div>
         <h3>React Native Developer</h3>
         <div class="co">Veramasa IT &amp; Education Consultancy Pvt. Ltd. · India</div>
@@ -365,17 +371,17 @@
   </section>
 
   <section id="education" class="wrap">
-    <div class="sec-head"><span class="sec-no">05</span><h2>Education &amp; Recognition</h2></div>
+    <div class="sec-head reveal"><span class="sec-no">05</span><h2>Education &amp; Recognition</h2></div>
     <div class="two">
-      <div class="mini"><h3>B.E. — Computer Engineering</h3><div class="when">IET, DAVV, Indore · 2018 – 2021</div></div>
-      <div class="mini"><h3>Diploma — Computer Science</h3><div class="when">Govt. Polytechnic College, Sanawad · 2015 – 2018</div></div>
-      <div class="mini"><h3>🏆 Employee of the Month</h3><div class="when">August 2025 · Virtual Height IT Services</div><p>Recognized for contributions to the SGNT application.</p></div>
-      <div class="mini"><h3>⭐ Client Appreciation</h3><div class="when">Feature delivery &amp; app quality</div><p>Appreciated for application stability and performance.</p></div>
+      <div class="mini reveal"><h3>B.E. — Computer Engineering</h3><div class="when">IET, DAVV, Indore · 2018 – 2021</div></div>
+      <div class="mini reveal"><h3>Diploma — Computer Science</h3><div class="when">Govt. Polytechnic College, Sanawad · 2015 – 2018</div></div>
+      <div class="mini reveal"><h3>🏆 Employee of the Month</h3><div class="when">August 2025 · Virtual Height IT Services</div><p>Recognized for contributions to the SGNT application.</p></div>
+      <div class="mini reveal"><h3>⭐ Client Appreciation</h3><div class="when">Feature delivery &amp; app quality</div><p>Appreciated for application stability and performance.</p></div>
     </div>
   </section>
 
   <section id="contact" class="wrap">
-    <div class="contact-card">
+    <div class="contact-card reveal">
       <h2>Let's build something great</h2>
       <p>Open to Senior / Lead React Native and Mobile Software Engineer roles. Reach out — I usually reply quickly.</p>
       <div class="contact-list">
@@ -406,6 +412,21 @@
     });
   });
   document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // scroll reveal
+  (function () {
+    var root = document.documentElement;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    root.classList.add("js");
+    var els = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) { els.forEach(function(e){ e.classList.add("in"); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    els.forEach(function (e, i) { e.style.transitionDelay = ((i % 4) * 60) + "ms"; io.observe(e); });
+  })();
 </script>
 </body>
 </html>
